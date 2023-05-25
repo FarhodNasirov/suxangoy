@@ -36,7 +36,9 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0 top-menu">
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="#">Boshi</a>
+							<a class="nav-link active" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">
+								Boshi
+							</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link disabled" href="#">Avvalgisi</a>
@@ -70,6 +72,61 @@
 				</div>
 			</div>
 		</nav>
+
+		<!-- Модальные окна -->
+		<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+			<div class="modal-dialog modal-lg modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header bg-secondary text-white">
+						<h1 class="modal-title fs-5" id="exampleModalToggleLabel">10-chi so'z</h1>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						interesting
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Tarjimasi</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+			<div class="modal-dialog modal-lg modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header bg-secondary text-white">
+						<h1 class="modal-title fs-5" id="exampleModalToggleLabel2">10-chi so'z tarjimasi</h1>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<!-- табличный контент -->
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Ma'nosi</th>
+									<th scope="col">Ishlatilishi</th>
+									<th scope="col">Izox</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<td>gizigarli</td>
+									<td>Kitob qiziqarli</td>
+									<td>Gap yo'q</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-secondary" data-bs-dismiss="modal" type="button" id="hard">Eslay olmadim (3 min)</button>
+						<button class="btn btn-primary" data-bs-dismiss="modal" type="button" id="middle">Esladim (1 min)</button>
+						<button class="btn btn-primary" data-bs-dismiss="modal" type="button" id="easy">Buni bildim</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">10-chi so'z</button> -->
 
 		<!-- пакет Bootstrap с Popper -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
