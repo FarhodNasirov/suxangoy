@@ -1,137 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 
-<html lang="en">
-
-	<head>
-
-		<!-- Обязательные метатеги -->
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-
-		<!-- Bootstrap CSS -->
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-
-		<!-- Google fonts -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-		<!-- Мои стили -->
-		<link rel="stylesheet" href="/css/normalize.css">
-		<link rel="stylesheet" href="/css/styles.css">
-
-		<title>Suxangoy</title>
-
-	</head>
+<html>
 
 	<body>
 
-		<!-- Навигационный бар -->
-		<nav class="navbar navbar-expand-lg bg-body-tertiary">
-			<div class="container-fluid">
-				<a class="navbar-brand" href="#">Suxangoy</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0 top-menu">
-						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">
-								Boshi
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link disabled" href="#">Avvalgisi</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Keyingisi</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Oxiri</a>
-						</li>
-					</ul>
-					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								Mijoz
-							</a>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#">Xarakat</a></li>
-								<li><a class="dropdown-item" href="#">Boshqa xarakat</a></li>
-								<li><hr class="dropdown-divider"></li>
-								<li><a class="dropdown-item" href="#">Yana nimadir</a></li>
-							</ul>
-						</li>
-					</ul>
-					<form class="d-flex" role="search">
-						<input class="form-control me-2" type="search" placeholder="Word/So'z" aria-label="search">
-						<button class="btn btn-outline-success" type="submit">
-							Qidiruv
-						</button>
-					</form>
-				</div>
-			</div>
-		</nav>
+		<p id="words"></p>
 
-		<!-- Модальные окна -->
-		<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-			<div class="modal-dialog modal-lg modal-dialog-centered">
-				<div class="modal-content">
-					<div class="modal-header bg-secondary text-white">
-						<h1 class="modal-title fs-5" id="exampleModalToggleLabel">10-chi so'z</h1>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					</div>
-					<div class="modal-body">
-						interesting
-					</div>
-					<div class="modal-footer">
-						<button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Tarjimasi</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-			<div class="modal-dialog modal-lg modal-dialog-centered">
-				<div class="modal-content">
-					<div class="modal-header bg-secondary text-white">
-						<h1 class="modal-title fs-5" id="exampleModalToggleLabel2">10-chi so'z tarjimasi</h1>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					</div>
-					<div class="modal-body">
-						<!-- табличный контент -->
-						<table class="table">
-							<thead>
-								<tr>
-									<th scope="col">#</th>
-									<th scope="col">Ma'nosi</th>
-									<th scope="col">Ishlatilishi</th>
-									<th scope="col">Izox</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<th scope="row">1</th>
-									<td>gizigarli</td>
-									<td>Kitob qiziqarli</td>
-									<td>Gap yo'q</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					<div class="modal-footer">
-						<button class="btn btn-secondary" data-bs-dismiss="modal" type="button" id="hard">Eslay olmadim (3 min)</button>
-						<button class="btn btn-primary" data-bs-dismiss="modal" type="button" id="middle">Esladim (1 min)</button>
-						<button class="btn btn-primary" data-bs-dismiss="modal" type="button" id="easy">Buni bildim</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">10-chi so'z</button> -->
+		<!-- https://docs.google.com/spreadsheets/d/e/2PACX-1vTVGqfy7og7Gz5lmQknxdfYlyaqEBhnLsdr5xz6Gs8xUx8JSWY9PUAhHSANZ2g972sz65wnkMjs4ccv/pub?output=csv -->
 
-		<!-- пакет Bootstrap с Popper -->
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-		<!-- собственный скрипт -->
-		<script src="/scripts/autofocus.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
+		<script type="text/javascript">
+
+			var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTVGqfy7og7Gz5lmQknxdfYlyaqEBhnLsdr5xz6Gs8xUx8JSWY9PUAhHSANZ2g972sz65wnkMjs4ccv/pub?output=csv';
+
+			function init() {
+				Papa.parse(public_spreadsheet_url, {
+					download: true,
+					header: true,
+					complete: showInfo
+				})
+			}
+
+			window.addEventListener('DOMContentLoaded', init)
+
+			function showInfo(results) {
+				var data = results.data
+				// data comes through as a simple array since simpleSheet is turned on
+				alert("Successfully processed " + data.length + " rows!")
+				document.getElementById("words").innerHTML = "<strong>Words:</strong> " + [ data[0].Name, data[1].Name ].join(", ");
+				console.log(data);
+			}
+
+			document.write("The published spreadsheet is located at <a target='_new' href='" + public_spreadsheet_url + "'>" + public_spreadsheet_url + "</a>");        
+		</script>
+
+	<p><strong>This example is only going to work if it's on the internet or on a local server!</strong> To run a local server, run "terminal" or "command prompt" and run the command <code>python -m http.server</code> or <code>python -m SimpleHTTPServer</code> (whichever one works, really, and you might even need to <a href="http://littlecolumns.com/tools/python-wrangler/">install Python</a>). Then visit <a href="http://localhost:8000/">http://localhost:8000</a> and you'll be all set.</p>
 
 	</body>
 
