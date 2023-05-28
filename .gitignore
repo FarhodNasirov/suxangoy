@@ -1,2 +1,5 @@
 .editorconfig
-index_exp.txt
+index_exp.html
+*.info
+/css/sheet.css
+/scripts/sheet.js
