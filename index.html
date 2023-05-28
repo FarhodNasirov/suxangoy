@@ -65,11 +65,8 @@
 							</ul>
 						</li>
 					</ul> -->
-					<form class="d-flex" role="search" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">
+					<form class="d-flex" role="search">
 						<input class="form-control me-2" type="search" value="1" aria-label="Search" name="lesson">
-						<button class="btn btn-outline-success" type="submit">
-							Kartochkalar
-						</button>
 						<script>
 							let url = "https://script.google.com/macros/s/AKfycbwtTwvPulXGBKhTfiE6VLffDnl4BDnfHh0ZzS4iQ_H-FybI5IQD5yCYcHEk-SfEyDBHjg/exec?lesson=1"
 							fetch(url, {
@@ -79,6 +76,9 @@
 							.then((response) => {response.json()})
 							.then((data) => {console.log(data)})
 						</script>
+						<button class="btn btn-outline-success" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">
+							Kartochkalar
+						</button>
 					</form>
 				</div>
 			</div>
