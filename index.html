@@ -5,7 +5,7 @@
 	<head>
 
 		<!-- Нормализационные стили -->
-		<link rel="stylesheet" href="/css/normalize.css">
+		<link rel="stylesheet" href="css/normalize.css">
 
 		<!-- Обязательные метатеги -->
 		<meta charset="utf-8">
@@ -20,7 +20,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 		<!-- Мои стили -->
-		<link rel="stylesheet" href="/css/styles.css">
+		<link rel="stylesheet" href="css/styles.css">
 
 		<title>Suxangoy</title>
 
@@ -65,11 +65,12 @@
 							</ul>
 						</li>
 					</ul> -->
-					<form class="d-flex" role="search" method="get" "https://script.google.com/macros/s/AKfycbwtTwvPulXGBKhTfiE6VLffDnl4BDnfHh0ZzS4iQ_H-FybI5IQD5yCYcHEk-SfEyDBHjg/exec?lessin=1">
-						<input class="form-control me-2" type="text" placeholder="Dars raqami" aria-label="Lesson number">
+					<form class="d-flex" role="search" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">
+						<input class="form-control me-2" type="text" value="1" aria-label="Lesson number" name="lesson">
 						<button class="btn btn-outline-success" type="submit"> <!-- data-bs-toggle="modal" data-bs-target="#exampleModalToggle" -->
 							Kartochralar
 						</button>
+						<script scr="/scripts/doGet.js"></script>
 					</form>
 				</div>
 			</div>
