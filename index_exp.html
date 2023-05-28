@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<!-- <a href="https://script.google.com/macros/s/AKfycbwtTwvPulXGBKhTfiE6VLffDnl4BDnfHh0ZzS4iQ_H-FybI5IQD5yCYcHEk-SfEyDBHjg/exec?lesson=1">GoogleSheetJson</a> -->
+	<script>
+		let url = "https://script.google.com/macros/s/AKfycbwtTwvPulXGBKhTfiE6VLffDnl4BDnfHh0ZzS4iQ_H-FybI5IQD5yCYcHEk-SfEyDBHjg/exec?lesson=1"
+		const newPost = {
+			lesson: '1',
+		}
+
+		fetch(url, {
+			method: 'GET',                  // Здесь так же могут быть GET, PUT, DELETE
+			// body: JSON.stringify(newPost),   // Тело запроса в JSON-формате
+			// headers: {
+			// 	'Content-type': 'application/json; charset=UTF-8',
+			// },
+		})
+			.then((response) => response.json())
+			.then((data) => {
+				console.log(data)
+			})
+	</script>
+</body>
+</html>
