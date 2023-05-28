@@ -2,12 +2,13 @@ let url = "https://script.google.com/macros/s/AKfycbwtTwvPulXGBKhTfiE6VLffDnl4BD
 
 fetch(url, {
 	method: 'GET',
-	credentials: 'include',
+	// credentials: 'include',
 })
-.then((response) => {
-	if (!response.ok) {
-		throw new Error('Error occurred!')
-	} response.json()})
-	.catch((err) => {
-		console.log(err)})
+.then((response) => {response.json()})
 .then((data) => {console.log(data)})
+
+// if (!response.ok) {
+// 	throw new Error('Error occurred!')
+// } response.json()})
+// .catch((err) => {
+// 	console.log(err)})
