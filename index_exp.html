@@ -1,30 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-</head>
-<body>
-	<!-- <a href="https://script.google.com/macros/s/AKfycbwtTwvPulXGBKhTfiE6VLffDnl4BDnfHh0ZzS4iQ_H-FybI5IQD5yCYcHEk-SfEyDBHjg/exec?lesson=1">GoogleSheetJson</a> -->
-	<script>
-		let url = "https://script.google.com/macros/s/AKfycbwtTwvPulXGBKhTfiE6VLffDnl4BDnfHh0ZzS4iQ_H-FybI5IQD5yCYcHEk-SfEyDBHjg/exec?lesson=1"
-		const newPost = {
-			lesson: '1',
-		}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="/scripts/doGet.js"></script>
+  <script>
+    let url = "https://script.google.com/macros/s/AKfycbyZ5v5WQHXacu8B7whaPl13eLBAR_wXg9hLy4eX5nxjBP1uyEDsz8bCNU0pCJ98I1366A/exec"
 
-		fetch(url, {
-			method: 'GET',                  // Здесь так же могут быть GET, PUT, DELETE
-			// body: JSON.stringify(newPost),   // Тело запроса в JSON-формате
-			// headers: {
-			// 	'Content-type': 'application/json; charset=UTF-8',
-			// },
-		})
-			.then((response) => response.json())
-			.then((data) => {
-				console.log(data)
-			})
-	</script>
+    var xhr = new XMLHttpRequest() // конструктор не имеет аргументов
+    xhr.open(
+      "GET",
+      url,
+      true
+    )  // xhr.open(method, URL, [async, user, password])  async = true
+    xhr.send()  // xhr.send([body]) body - тело запроса для метода POST, метод GET не имеет body
+
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState != 4) {
+        return
+      }
+
+      if (xhr.status === 200) {
+        result = JSON.parse(xhr.responseText)
+        console.log("result", result)
+      } else {
+        console.log("err", xhr.responseText)
+      }
+    }
+
+  </script>
+
+</head>
+
+<body>
+
+  <form action="#">
+    <p>Fill this form</p>
+    <label for="lesson">Lesson number</label>
+    <input id="lesson" type="number"><br/>
+    <button>This is button</button>
+  </form>
+
 </body>
+
 </html>

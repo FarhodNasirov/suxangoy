@@ -24,11 +24,25 @@
 
 		<title>Suxangoy</title>
 
+		<script>
+
+			let url = "https://script.google.com/macros/s/AKfycbyZ5v5WQHXacu8B7whaPl13eLBAR_wXg9hLy4eX5nxjBP1uyEDsz8bCNU0pCJ98I1366A/exec"
+
+			async function getResponse(address) {
+				let response = await fetch(address)
+				let content = await response.json()
+				console.log(content)
+				return content;
+			}
+
+			result = getResponse(url);
+
+		</script>
 	</head>
 
 	<body>
 
-		<!-- Навигационный бар -->
+<!-- Навигационный бар -->
 		<nav class="navbar navbar-expand-lg bg-body-tertiary">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="index_exp.html">Suxangoy</a>
@@ -66,16 +80,8 @@
 						</li>
 					</ul> -->
 					<form class="d-flex" role="search">
-						<input class="form-control me-2" type="search" value="1" aria-label="Search">
-						<!-- <script>
-							let url = "https://script.google.com/macros/s/AKfycbwtTwvPulXGBKhTfiE6VLffDnl4BDnfHh0ZzS4iQ_H-FybI5IQD5yCYcHEk-SfEyDBHjg/exec?lesson=1"
-							fetch(url, {
-								method: 'GET',
-							})
-							.then((response) => {response.json()})
-							.then((data) => {console.log(data)})
-						</script> -->
-						<button class="btn btn-outline-success" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">
+						<input class="form-control me-2" type="search" value="1" aria-label="Search" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">
+						<button class="btn btn-outline-success" type="submit">
 							Kartochkalar
 						</button>
 					</form>
