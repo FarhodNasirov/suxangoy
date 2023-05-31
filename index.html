@@ -24,18 +24,18 @@
 
 		<title>Suxangoy</title>
 
-		<script>
+		<script type="text/javascript">
 
-			let url = "https://script.google.com/macros/s/AKfycbyZ5v5WQHXacu8B7whaPl13eLBAR_wXg9hLy4eX5nxjBP1uyEDsz8bCNU0pCJ98I1366A/exec"
-
-			async function getResponse(address) {
-				let response = await fetch(address)
+			async function getResponse() {
+				let url = "https://script.google.com/macros/s/AKfycbz5Z28i_uAV9wPF-zgGrOeb2mnXRybnZ4SaD8iOUViI0iQPIs_8iv4Z8m9fmSyw7V2-0A/exec"
+				let response = await fetch(url)
 				let content = await response.json()
 				console.log(content)
-				return content;
+				return content
 			}
 
-			result = getResponse(url);
+			wordsDB = getResponse()
+			// console.log(wordsDB)
 
 		</script>
 	</head>
@@ -79,9 +79,9 @@
 							</ul>
 						</li>
 					</ul> -->
-					<form class="d-flex" role="search">
-						<input class="form-control me-2" type="search" value="1" aria-label="Search" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">
-						<button class="btn btn-outline-success" type="submit">
+					<form class="d-flex" role="input">
+						<input class="form-control me-2" type="search" value="1" aria-label="Search" onclick="getResponse()">
+						<button class="btn btn-outline-success" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">
 							Kartochkalar
 						</button>
 					</form>

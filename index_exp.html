@@ -5,31 +5,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="/scripts/doGet.js"></script>
-  <script>
-    let url = "https://script.google.com/macros/s/AKfycbyZ5v5WQHXacu8B7whaPl13eLBAR_wXg9hLy4eX5nxjBP1uyEDsz8bCNU0pCJ98I1366A/exec"
 
-    var xhr = new XMLHttpRequest() // конструктор не имеет аргументов
-    xhr.open(
-      "GET",
-      url,
-      true
-    )  // xhr.open(method, URL, [async, user, password])  async = true
-    xhr.send()  // xhr.send([body]) body - тело запроса для метода POST, метод GET не имеет body
+  <script type="text/javascript">
+    function addURLParam(url, name, value) {
+      url += (url.indexOf("?") == -1 ? "?" : "&");
+      url += encodeURIComponent(name) + "=" + encodeURIComponent(value);
+      return url;
+    };
 
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState != 4) {
-        return
-      }
+    async function getResponse() {
+      let url = "https://script.google.com/macros/s/AKfycbz5Z28i_uAV9wPF-zgGrOeb2mnXRybnZ4SaD8iOUViI0iQPIs_8iv4Z8m9fmSyw7V2-0A/exec"
+      url = addURLParam(url, "lesson", "1");
+      let response = await fetch(url);
+      let content = await response.json();
+      console.log(content);
+      return content;
+    };
 
-      if (xhr.status === 200) {
-        result = JSON.parse(xhr.responseText)
-        console.log("result", result)
-      } else {
-        console.log("err", xhr.responseText)
-      }
-    }
-
+    wordsDB = getResponse();
   </script>
 
 </head>
