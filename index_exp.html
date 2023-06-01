@@ -7,34 +7,31 @@
   <title>Document</title>
 
   <script type="text/javascript">
+    var wordsDB
+
     function addURLParam(url, name, value) {
       url += (url.indexOf("?") == -1 ? "?" : "&");
       url += encodeURIComponent(name) + "=" + encodeURIComponent(value);
       return url;
     };
 
-    async function getResponse() {
-      let url = "https://script.google.com/macros/s/AKfycbz5Z28i_uAV9wPF-zgGrOeb2mnXRybnZ4SaD8iOUViI0iQPIs_8iv4Z8m9fmSyw7V2-0A/exec"
-      url = addURLParam(url, "lesson", "1");
+    async function getResponse(lesson) {
+      let url = "https://script.google.com/macros/s/AKfycbz5Z28i_uAV9wPF-zgGrOeb2mnXRybnZ4SaD8iOUViI0iQPIs_8iv4Z8m9fmSyw7V2-0A/exec";
+      url = addURLParam(url, "lesson", lesson);
       let response = await fetch(url);
-      let content = await response.json();
-      console.log(content);
-      return content;
+      return response.json();
+      // return wordsDB
     };
 
-    wordsDB = getResponse();
   </script>
 
 </head>
 
 <body>
 
-  <form action="#">
-    <p>Fill this form</p>
-    <label for="lesson">Lesson number</label>
-    <input id="lesson" type="number"><br/>
-    <button>This is button</button>
-  </form>
+  <label for="lesson">Lesson number:</label>
+  <input type="text" onchange="wordsDB = getResponse(this.value); console.log(wordsDB)">
+  <input type="button" value="Ok">
 
 </body>
 
