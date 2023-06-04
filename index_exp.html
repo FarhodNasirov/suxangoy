@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 
-  <script type="text/javascript">
-    var wordsDB
+  <script>
+
+    let url = "https://script.google.com/macros/s/AKfycbz5Z28i_uAV9wPF-zgGrOeb2mnXRybnZ4SaD8iOUViI0iQPIs_8iv4Z8m9fmSyw7V2-0A/exec";
 
     function addURLParam(url, name, value) {
       url += (url.indexOf("?") == -1 ? "?" : "&");
@@ -16,11 +18,9 @@
     };
 
     async function getResponse(lesson) {
-      let url = "https://script.google.com/macros/s/AKfycbz5Z28i_uAV9wPF-zgGrOeb2mnXRybnZ4SaD8iOUViI0iQPIs_8iv4Z8m9fmSyw7V2-0A/exec";
       url = addURLParam(url, "lesson", lesson);
-      let response = await fetch(url);
-      return response.json();
-      // return wordsDB
+      let response = await fetch(url).then((response) => response.json());
+      return response;
     };
 
   </script>
@@ -30,8 +30,28 @@
 <body>
 
   <label for="lesson">Lesson number:</label>
-  <input type="text" onchange="wordsDB = getResponse(this.value); console.log(wordsDB)">
-  <input type="button" value="Ok">
+  <input id="lesson" name="lesson" value="" type="text">
+  <input id="okay" type="button" value="Ok">
+
+  <script>
+
+    function showDB() {
+      wordsDB = getResponse(lesson.value);  // из-за обращения к элементу lesson проблема во внешнем скрипте
+      wordsDB.then((data) => {
+        for (let index = 0; index < data.dictionary.length; index++) {
+          const element = data.dictionary[index];
+          console.log(element.lesson, element.english, element.uzbek, element.cardid);
+        }
+      })
+    }
+
+    function clickme() {
+      document.getElementById("okay").addEventListener("click", showDB, false)
+    }
+
+    window.addEventListener("load", clickme, false);
+
+  </script>
 
 </body>
 

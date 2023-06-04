@@ -1,14 +1,29 @@
-let url = "https://script.google.com/macros/s/AKfycbyZ5v5WQHXacu8B7whaPl13eLBAR_wXg9hLy4eX5nxjBP1uyEDsz8bCNU0pCJ98I1366A/exec"
+let url = "https://https://script.google.com/macros/s/AKfycbz5Z28i_uAV9wPF-zgGrOeb2mnXRybnZ4SaD8iOUViI0iQPIs_8iv4Z8m9fmSyw7V2-0A/exec";
 
-async function getResponse(address) {
-	let response = await fetch(address)
-	let content = await response.json()
-	return content;
+function addURLParam(url, name, value) {
+  url += (url.indexOf("?") == -1 ? "?" : "&");
+  url += encodeURIComponent(name) + "=" + encodeURIComponent(value);
+  return url;
+};
+
+async function getResponse(lesson_value) {
+  url = addURLParam(url, "lesson", lesson_value);
+  let response = await fetch(url).then((response) => response.json());
+  return response;
+};
+
+function showDB() {
+  var wordsDB = getResponse(lesson);
+  wordsDB.then((data) => {
+    for (let index = 0; index < data.dictionary.length; index++) {
+      const element = data.dictionary[index];
+      console.log(element.lesson, element.english, element.uzbek, element.cardid);
+    }
+  })
 }
 
-result = getResponse(url);  // вызвать функцию в теле HTML и получим промис, который нужно обходит в цикле
-let key
-for (key in result) {
-	console.log(result[key])
-	alert(key)
+function clickme() {
+  document.getElementById("okay").addEventListener("click", showDB, false)
 }
+
+window.addEventListener("load", clickme, false);
