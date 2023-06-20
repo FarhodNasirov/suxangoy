@@ -1,7 +1,3 @@
 .editorconfig
 *.info
-/css/sheet.css
-/scripts/sheet.js
-/scripts/postjson.js
-/scripts/newcard.js
 /samples
