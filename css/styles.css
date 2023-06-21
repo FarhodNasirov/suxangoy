@@ -25,9 +25,12 @@ p {
   width: 320px;
   margin: 20px auto;
   -webkit-perspective: 1200;
+  -moz-perspective: 1200;
+  -ms-perspective: 1200;
   perspective: 1200;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d; 
+  -ms-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
 
@@ -44,6 +47,7 @@ p {
   height: 280px;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
   transform-style: preserve-3d;
   -webkit-transition: .7s linear;
   -moz-transition: .7s linear;
@@ -62,6 +66,7 @@ p {
   height: 100%;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
