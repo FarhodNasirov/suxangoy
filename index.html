@@ -27,11 +27,11 @@
     <div class="container">
       <div class="flipper">
         <div class="front">
-          <h3>english-{{card.lesson}}</h3>
+          <h3>english-{{card.lesson}}.{{card.cardid}}</h3>
           <p><span>{{card.english}}</span></p>
         </div>
         <div class="back">
-          <h3>o'zbek-{{card.lesson}}</h3>
+          <h3>o'zbek-{{card.lesson}}.{{card.cardid}}</h3>
           <p><span>{{card.uzbek}}</span></p>
         </div>
       </div>
@@ -52,7 +52,7 @@
             uzbek: "o'zbek"
           },
           arr: [],
-          nextId: 1
+          nextId: 0
         }
       },
       computed: {
@@ -63,7 +63,7 @@
       methods: {
         nextWord: function() {
           var i = this.nextId;
-          while (i <= this.cards.length) {
+          while ((this.arr.length < this.cards.length) && (i <= this.cards.length)) {
             if (this.arr.indexOf(i) < 0) {
               this.arr.push(i);
               for (let c = 0; c < this.cards.length; c++) {
@@ -76,7 +76,7 @@
                 }
               }
             }
-            i += 1;
+            i = Math.floor(Math.random() * this.cards.length) + 1;
             this.nextId = i;
           }
         },
