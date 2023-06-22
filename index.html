@@ -27,12 +27,20 @@
     <div class="container">
       <div class="flipper">
         <div class="front">
-          <h3>english-{{card.lesson}}.{{card.cardid}}</h3>
-          <p><span>{{card.english}}</span></p>
+          <h3>
+            english-<span v-text="card.lesson"></span>.<span v-text="card.cardid"></span>
+          </h3>
+          <p>
+            <span v-text="card.english"></span>
+          </p>
         </div>
         <div class="back">
-          <h3>o'zbek-{{card.lesson}}.{{card.cardid}}</h3>
-          <p><span>{{card.uzbek}}</span></p>
+          <h3>
+            o'zbek-<span v-text="card.lesson"></span>.<span v-text="card.cardid"></span>
+          </h3>
+          <p>
+            <span v-text="card.uzbek"></span>
+          </p>
         </div>
       </div>
     </div>
