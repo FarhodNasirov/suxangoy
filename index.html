@@ -97,6 +97,19 @@
           };
           async function getResponse(lesson) {
             url = addURLParam(url, "lesson", lesson);
+
+            // var xhr = new XMLHttpRequest();
+            // xhr.withCredentials = true;
+            // xhr.onload = function() {
+            //   if (this.status != 200) {
+            //     alert( this.status + ": " + this.statusText );
+            //   } else {
+            //     console.log(this.responseText);
+            //   };
+            // };
+            // xhr.open("GET", url);
+            // xhr.send();
+
             let response = await fetch(url).then((response) => response.json());
             return response;
           };
