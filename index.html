@@ -6,8 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="./favicon.ico">
+
   <!-- Нормализационные стили -->
   <link rel="stylesheet" href="./css/normalize.css">
+  
+  <!-- axios 1.4.0 -->
+  <script src="https://unpkg.com/axios@1.4.0/dist/axios.min.js"></script>
 
   <!-- пакет Vue 3 -->
   <script src="https://unpkg.com/vue@3.2.36/dist/vue.global.js"></script>
@@ -90,15 +94,16 @@
         },
         initbase: function() {
           let url = "https://script.google.com/macros/s/AKfycbz5Z28i_uAV9wPF-zgGrOeb2mnXRybnZ4SaD8iOUViI0iQPIs_8iv4Z8m9fmSyw7V2-0A/exec";
+          
           function addURLParam(url, name, value) {
             url += (url.indexOf("?") == -1 ? "?" : "&");
             url += encodeURIComponent(name) + "=" + encodeURIComponent(value);
             return url;
           };
+          
           async function getResponse(lesson) {
             url = addURLParam(url, "lesson", lesson);
 
-            // var vuethis = this;
             // var xhr = new XMLHttpRequest();
             // xhr.withCredentials = true;
             // xhr.onreadystatechange = function() {
@@ -113,9 +118,13 @@
             // xhr.open("GET", url);
             // xhr.send(null);
 
-            let response = await fetch(url).then((response) => response.json());
+            let response = axios.get(url)
+              .then((response) => response.data);
+
+            // let response = await fetch(url).then((response) => response.json());
             return response;
           };
+
           this.nextId = 1;
           this.arr = [];
           this.cards = [];
